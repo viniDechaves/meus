@@ -22,38 +22,52 @@ header {
     background-color: #1e1e1e; /* Cor de fundo do cabeçalho */
     color: #fff;
     padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1000; /* Para ficar sobreposto ao conteúdo */
 }
 
-header h1 {
-    font-size: 2.5rem;
+header .logo h1 {
+    font-size: 1.8rem;
     font-weight: bold;
-    text-align: center;
+    margin: 0;
 }
 
-nav ul {
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu-icon {
+    font-size: 1.8rem;
+    cursor: pointer;
+    display: none; /* Esconde o ícone do menu em telas maiores */
+}
+
+.menu {
     list-style-type: none;
-    text-align: center;
-    margin-top: 10px;
+    display: flex;
 }
 
-nav ul li {
-    display: inline;
-    margin: 0 10px;
+.menu li {
+    margin-left: 20px;
 }
 
-nav ul li a {
+.menu li a {
     color: #fff;
     text-decoration: none;
     font-size: 1.2rem;
+    transition: color 0.3s ease;
 }
 
-nav ul li a:hover {
-    text-decoration: underline;
+.menu li a:hover {
+    color: #66a3ff; /* Cor azul mais clara no hover */
 }
 
 .main-content {
-    background-color: #fff; /* Cor de fundo do conteúdo principal */
-    padding: 40px 0;
+    margin-top: 80px; /* Ajuste para o conteúdo não ficar sob o cabeçalho */
+    padding: 40px;
     text-align: center;
 }
 
@@ -74,9 +88,7 @@ footer {
     color: #fff;
     text-align: center;
     padding: 10px 0;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+    margin-top: 20px;
 }
 
 footer p {
@@ -85,12 +97,33 @@ footer p {
 
 /* Estilos para dispositivos móveis */
 @media (max-width: 768px) {
-    header h1 {
-        font-size: 2rem;
+    .menu {
+        display: none; /* Esconde o menu na versão mobile */
+        flex-direction: column;
+        position: fixed;
+        top: 60px; /* Posição abaixo do cabeçalho */
+        left: 0;
+        width: 100%;
+        background-color: #1e1e1e;
+        padding: 20px 0;
+        text-align: center;
+        z-index: 999; /* Abaixo do cabeçalho */
     }
 
-    nav ul li {
-        display: block;
+    .menu.active {
+        display: flex; /* Mostra o menu quando o toggle está ativo */
+    }
+
+    .menu li {
         margin: 10px 0;
+    }
+
+    .menu-icon {
+        display: block; /* Mostra o ícone do menu hamburguer */
+        cursor: pointer;
+    }
+
+    .main-content {
+        margin-top: 140px; /* Ajuste para o conteúdo não ficar sob o menu */
     }
 }

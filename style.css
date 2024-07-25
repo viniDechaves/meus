@@ -9,6 +9,7 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0; /* Cor de fundo do corpo do site */
+    color: #333; /* Cor do texto principal */
 }
 
 .container {
@@ -25,6 +26,7 @@ header {
     position: fixed;
     width: 100%;
     z-index: 1000; /* Para ficar sobreposto ao conteúdo */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
 header .logo h1 {
@@ -72,15 +74,29 @@ nav {
 }
 
 .main-content h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: #1e1e1e; /* Cor do título do conteúdo principal */
+    margin-bottom: 20px;
 }
 
 .main-content p {
     font-size: 1.1rem;
-    color: #555;
     line-height: 1.6;
-    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #1e1e1e;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #66a3ff; /* Cor azul mais clara no hover */
 }
 
 footer {
@@ -125,5 +141,14 @@ footer p {
 
     .main-content {
         margin-top: 140px; /* Ajuste para o conteúdo não ficar sob o menu */
+        padding: 20px;
+    }
+
+    .main-content h2 {
+        font-size: 2rem;
+    }
+
+    .button {
+        margin-top: 20px;
     }
 }
